@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "222faed3-d243-40a8-94f4-bac63d5c80fe",
+		"name": "7 - Alura - NET5_e_Identity_Autenticando_e_Autorizando_Usuarios",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "FilmeAPI",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "Listar Filmes",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImZsYXZpb2NhcnZhbGhvIiwiaWQiOiIxMDAwMDQiLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJyZWd1bGFyIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZGF0ZW9mYmlydGgiOiIyLzQvMTk3OCAxMjowMDowMCBBTSIsImV4cCI6MTYzOTQ5NzQ2M30.8yxTxvZvRs93QdaTgbLfmE0_DopTmKXFRRNyEOVV9pE",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/Filme",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"Filme"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Filmes por Classificação Etária",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:5000/Filme?classificacaoEtaria=12",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"Filme"
+									],
+									"query": [
+										{
+											"key": "classificacaoEtaria",
+											"value": "12"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Listar Filme por Id",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/Filme/5",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"Filme",
+										"5"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Incluir Filme",
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaWQiOiI5OTk5OSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6ImFkbWluIiwiZXhwIjoxNjM5NDg4OTYzfQ.dzOBFEzJNA46h8HABsWqOwsVEpJmHE3Ova19SrzZ2WY",
+											"type": "string"
+										}
+									]
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"Titulo\": \"John Wick - De volta para o jogo 3\",\r\n    \"Diretor\": \"Qualquer\",\r\n    \"Genero\": \"Ação\",\r\n    \"Duracao\": 120,\r\n    \"ClassificacaoEtaria\": 16\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:5000/Filme",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "5000",
+									"path": [
+										"Filme"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "UsuarioAPI",
+			"item": [
+				{
+					"name": "Cadastrar Usuário",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\" : \"flaviocarvalho2\",\r\n    \"Email\" : \"flavio.megre@gmail.com\",\r\n    \"Password\" : \"Senha123!\",\r\n    \"Repassword\" : \"Senha123!\",\r\n    \"DataNascimento\" : \"2010-02-04T00:00:00\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6000/Cadastro",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"Cadastro"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ativar Conta de Usuário",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6000/Ativar?UserId=100005&ActivationCode=CfDJ8NaqYJ36IlVDh3Ai31tVZfmogtHa0FvYr2MtqA5VNptFBCbW2OYlbHggp1sGRC7AVG2my+Ax1S4lAxYdyQ+vLKCzma0tRmnqfPoOsY16zZHlZR6O5i+ke9ApExBOONJVkP+QvZ1kqUgwwPWNvRZOt7WlBUPPhV3Yr8iHffKMPzYQdFrOIq0JwZZw7P+uQtgLf5gGM38vXwt0TK7kSQRqe8s=",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"Ativar"
+							],
+							"query": [
+								{
+									"key": "UserId",
+									"value": "100005"
+								},
+								{
+									"key": "ActivationCode",
+									"value": "CfDJ8NaqYJ36IlVDh3Ai31tVZfmogtHa0FvYr2MtqA5VNptFBCbW2OYlbHggp1sGRC7AVG2my+Ax1S4lAxYdyQ+vLKCzma0tRmnqfPoOsY16zZHlZR6O5i+ke9ApExBOONJVkP+QvZ1kqUgwwPWNvRZOt7WlBUPPhV3Yr8iHffKMPzYQdFrOIq0JwZZw7P+uQtgLf5gGM38vXwt0TK7kSQRqe8s="
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realizar Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"UserName\" : \"flaviocarvalho\",\r\n    \"Password\" : \"Senha123!\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6000/Login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"Login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Realizar Logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:6000/Logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"Logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Solicitar Reset da Senha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Email\" : \"flavio.megre@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6000/SolicitarReset",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"SolicitarReset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Resetar Senha",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Password\" : \"Senha456!\",\r\n    \"RePassword\" : \"Senha456!\",\r\n    \"Email\" : \"flavio.megre@gmail.com\",\r\n    \"Token\" : \"CfDJ8NaqYJ36IlVDh3Ai31tVZfmaMlEv/LK8gZe3i5Okt7BxqoklBzB/XioNYpIoqBSywpo5Y1K045jv/PSYmeN2mBFNf+04iUou89qjNYJ2TOKzS8Hr5vR6w6dXNz2ZkwJ5Na9i6CnS2EVfyARJ+dqq+egFHe2NwvJdw6rcFImdpZ8tWkl9PbCdzpqm3mwRfL69Xg==\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:6000/EfetuarReset",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "6000",
+							"path": [
+								"EfetuarReset"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
